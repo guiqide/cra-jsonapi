@@ -20,11 +20,20 @@
   },
   "homepage": "https://github.com/guiqide/cra-template-integration-team#readme",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "@types/lodash": "^4.14.172"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "lodash": "^4.17.21",
+    "react-dom": "^17.0.2"
   }
 }
