@@ -1,2 +1,2 @@
-# cra-template-integration-team
-integration-team
+# 一个基于create-react-app的模板
+

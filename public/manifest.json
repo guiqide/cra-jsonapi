@@ -1,6 +1,6 @@
 {
-  "short_name": "洞察平台",
-  "name": "洞察平台",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
