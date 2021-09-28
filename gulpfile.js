@@ -61,6 +61,9 @@ const templateDirList = [
   {
     name: "docs",
   },
+  {
+    name: "tailwind.config.js",
+  },
 ];
 
 const rootDirList = [
@@ -73,11 +76,25 @@ const rootDirList = [
 ];
 
 const depObj = {
+  "react-router-dom": "^5.3.0",
+  "@types/react-router-dom": "^5.1.8",
+  "@types/jest": "^27.0.1",
+  "@types/lodash": "^4.14.172",
+  "@types/node": "^16.7.13",
+  "@types/react": "^17.0.20",
+  "@types/react-dom": "^17.0.9",
+  "@typescript-eslint/parser": "^4.31.0",
   craco: "0.0.3",
   lodash: "^4.17.21",
   antd: "^4.16.13",
   "craco-less": "^1.20.0",
   typescript: "^4.4.2",
+  "web-vitals": "^2.1.0",
+  postcss: "^7.0.36",
+  autoprefixer: "^9.8.6",
+  tailwindcss: "npm:@tailwindcss/postcss7-compat@^2.2.10",
+  "@types/webpack-env": "^1.16.2",
+  "history": "^5.0.1",
 };
 
 const devDepObj = {
@@ -118,16 +135,16 @@ function copyfile(cb) {
     // 复制template目录文件
     templateDirList.forEach((item) => {
       const dirent = fs.statSync(item.name);
-			
+
       if (!dirent.isDirectory(item.name)) {
         src(item.name)
           .pipe(gulpif(!!item.rename, rename(item.rename)))
           .pipe(dest("dist/template"))
           .on("end", resolve);
       } else {
-        src(`${item.name}/*.*`)
+        src(`${item.name}/**/*.*`)
           .pipe(gulpif(!!item.rename, rename(item.rename)))
-          .pipe(dest("dist/template"))
+          .pipe(dest(`dist/template/${item.name}`))
           .on("end", resolve);
       }
     });
