@@ -1,0 +1,16 @@
+{
+  "name": "docusaurus",
+  "version": "0.0.0",
+  "description": "website",
+  "keywords": [
+    "react",
+    "website"
+  ],
+  "author": "guiqide <guiqide@gmail.com>",
+  "homepage": "https://git.woa.com/msh-low-code/cra-template/tree/master/packages/docusaurus#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@git.woa.com:msh-low-code/cra-template.git"
+  }
+}

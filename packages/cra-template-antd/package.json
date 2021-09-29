@@ -1,0 +1,21 @@
+{
+  "name": "cra-template-antd",
+  "version": "0.0.0",
+  "description": "cra for typescript",
+  "keywords": [
+    "react",
+    "antd"
+  ],
+  "author": "kevingui <kevingui@tencent.com>",
+  "homepage": "https://git.woa.com/msh-low-code/cra-template/tree/master/packages/cra-template-antd#readme",
+  "license": "MIT",
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@git.woa.com:msh-low-code/cra-template.git"
+  },
+  "dependencies": {}
+}

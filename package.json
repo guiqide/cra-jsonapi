@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guiqide/cra-template-integration-team.git"
+    "url": "git+https://git.woa.com/msh-low-code/cra-template.git"
   },
   "keywords": [
     "react"
@@ -19,9 +19,9 @@
   "author": "guiqide",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/guiqide/cra-template-integration-team/issues"
+    "url": "https://git.woa.com/msh-low-code/cra-template/issues"
   },
-  "homepage": "https://github.com/guiqide/cra-template-integration-team#readme",
+  "homepage": "https://git.woa.com/msh-low-code/cra-template#readme",
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@types/lodash": "^4.14.172",
@@ -53,14 +53,7 @@
     }
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/react-router-dom": "^5.1.8",
     "@types/webpack-env": "^1.16.2",
-    "antd": "^4.16.13",
-    "craco": "0.0.3",
-    "craco-less": "^1.20.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-import-resolver-alias": "^1.1.2",
     "history": "^5.0.1",

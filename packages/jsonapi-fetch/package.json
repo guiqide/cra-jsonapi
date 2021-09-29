@@ -1,0 +1,23 @@
+{
+  "name": "jsonapi-fetch",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "guiqide <guiqide@gmail.com>",
+  "homepage": "https://git.woa.com/msh-low-code/cra-template/tree/master/packages/jsonapi-fetch#readme",
+  "license": "MIT",
+  "main": "lib/jsonapi-fetch.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@git.woa.com:msh-low-code/cra-template.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
