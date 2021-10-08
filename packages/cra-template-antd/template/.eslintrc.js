@@ -27,7 +27,11 @@ module.exports = {
       "ObjectPattern": { "multiline": true },
       "ImportDeclaration": "never",
       "ExportDeclaration": { "multiline": true, "minProperties": 3 }
-    }]
+    }],
+    "import/no-anonymous-default-export": ["off"],
+    "import/prefer-default-export": ["off"],
+    "comma-dangle": ["error", "never"],
+    "@typescript-eslint/comma-dangle": ["error", "never"]
   },
 	settings: {
     react: {
@@ -37,8 +41,8 @@ module.exports = {
       alias: {
         map: [
           ["@", "./src"],
-          ["assets", "./src/assets"],
-          ["configs", "./src/configs"],
+          ["@assets", "./src/assets"],
+          ["@configs", "./src/configs"],
         ],
         extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
       },
