@@ -18,7 +18,7 @@
     "url": "git@git.woa.com:msh-low-code/cra-template.git"
   },
   "scripts": {
-    "start": "tsc --watch",
+    "start": "tsc --watch && sandbox/server",
     "build": "tsc",
     "publish": "npm run build && npm publish"
   },

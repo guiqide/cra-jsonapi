@@ -1,4 +1,6 @@
 class JsonapiFetch {
+  default: object;
+
   constructor(opt = null) {
     if (opt) {
       this.opt = opt;
@@ -42,5 +44,10 @@ class JsonapiFetch {
   }
 }
 
-const instance = new JsonapiFetch();
-export default instance;
+function createInstance() {
+  return new JsonapiFetch();
+}
+
+const jsonapi = createInstance();
+
+export default jsonapi;

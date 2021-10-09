@@ -1,4 +1,4 @@
-const CracoLessPlugin = require('craco-less');
+const CracoLessPlugin = require("craco-less");
 const CracoAlias = require("craco-alias");
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            modifyVars: { '@primary-color': '#1DA57A' },
+            modifyVars: { "@primary-color": "#1DA57A" },
             javascriptEnabled: true,
           },
         },
@@ -20,15 +20,12 @@ module.exports = {
         source: "tsconfig",
         tsConfigPath: "./tsconfig.path.json",
         baseUrl: "./src",
-      }
-    }
+      },
+    },
   ],
-	style: {
+  style: {
     postcss: {
-      plugins: [
-        require('tailwindcss'),
-        require('autoprefixer'),
-      ],
+      plugins: [require("tailwindcss"), require("autoprefixer")],
     },
   },
-}
+};
