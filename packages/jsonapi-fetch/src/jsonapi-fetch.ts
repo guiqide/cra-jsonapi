@@ -12,7 +12,7 @@ class JsonapiFetch {
   }
 
   fetch(url, options) {
-    return fetch(url, options);
+    return window.fetch(url, options);
   }
 
   get(url, options) {
