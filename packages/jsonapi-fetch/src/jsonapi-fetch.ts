@@ -1,53 +1,67 @@
+import { Params } from './type';
+
 class JsonapiFetch {
-  default: object;
+  private static instance: JsonapiFetch;
 
-  constructor(opt = null) {
-    if (opt) {
-      this.opt = opt;
+  default: Params;
+
+  constructor(config: Params) {
+    this.default = config;
+  }
+
+  public static getInstance(config: Params): JsonapiFetch {
+    if (!JsonapiFetch.instance) {
+      JsonapiFetch.instance = new JsonapiFetch(config);
     }
+
+    return JsonapiFetch.instance;
   }
 
-  config(opt: any) {
-    this.opt = opt;
+  fetch(resource: string | Request, options: RequestInit) {
+    const opt = { ...this.default, ...options };
+
+    return fetch(resource, opt).then((response) => {
+      if (response.status >= 200 && response.status < 300) {
+        return response.json();
+      }
+
+      return response.json().then((err) => {
+        throw err;
+      });
+    });
   }
 
-  fetch(url, options) {
-    return window.fetch(url, options);
+  get(url: string | Request, options: RequestInit = {}) {
+    return this.fetch(url, { ...options, method: 'GET' });
   }
 
-  get(url, options) {
-    return this.fetch(url, { method: 'GET', ...options });
+  post(url: string | Request, options: RequestInit = {}) {
+    return this.fetch(url, { ...options, method: 'POST' });
   }
 
-  post(url, options) {
-    return this.fetch(url, { method: 'POST', ...options });
+  put(url: string | Request, options: RequestInit = {}) {
+    return this.fetch(url, { ...options, method: 'PUT' });
   }
 
-  put(url, options) {
-    return this.fetch(url, { method: 'PUT', ...options });
+  patch(url: string | Request, options: RequestInit = {}) {
+    return this.fetch(url, { ...options, method: 'PATCH' });
   }
 
-  patch(url, options) {
-    return this.fetch(url, { method: 'PATCH', ...options });
+  delete(url: string | Request, options: RequestInit = {}) {
+    return this.fetch(url, { ...options, method: 'DELETE' });
   }
 
-  delete(url, options) {
-    return this.fetch(url, { method: 'DELETE', ...options });
+  head(url: string | Request, options: RequestInit = {}) {
+    return this.fetch(url, { ...options, method: 'HEAD' });
   }
 
-  head(url, options) {
-    return this.fetch(url, { method: 'HEAD', ...options });
-  }
-
-  options(url, options) {
-    return this.fetch(url, { method: 'OPTIONS', ...options });
+  options(url: string | Request, options: RequestInit = {}) {
+    return this.fetch(url, { ...options, method: 'OPTIONS' });
   }
 }
 
-function createInstance() {
-  return new JsonapiFetch();
+export function interceptor(config: Params) {
+  return JsonapiFetch.getInstance(config);
 }
 
-const jsonapi = createInstance();
-
-export default jsonapi;
+export default JsonapiFetch;
