@@ -1,4 +1,7 @@
-export interface Params extends RequestInit {}
+export interface Params extends RequestInit {
+  preFetchCallback?: Function;
+  finishFetchCallback?: Function;
+}
 
 export interface JsonError {
   id?: number;

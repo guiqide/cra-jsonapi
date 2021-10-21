@@ -17,10 +17,16 @@ class JsonapiFetch {
     return JsonapiFetch.instance;
   }
 
-  fetch(resource: string | Request, options: RequestInit) {
+  fetch(resource: string | Request, options: Params) {
     const opt = { ...this.default, ...options };
 
+    if (options.preFetchCallback) {
+      options.preFetchCallback();
+    }
     return fetch(resource, opt).then((response) => {
+      if (options.finishFetchCallback) {
+        options.finishFetchCallback();
+      }
       if (response.status >= 200 && response.status < 300) {
         return response.json();
       }
@@ -31,31 +37,31 @@ class JsonapiFetch {
     });
   }
 
-  get(url: string | Request, options: RequestInit = {}) {
+  get(url: string | Request, options: Params = {}) {
     return this.fetch(url, { ...options, method: 'GET' });
   }
 
-  post(url: string | Request, options: RequestInit = {}) {
+  post(url: string | Request, options: Params = {}) {
     return this.fetch(url, { ...options, method: 'POST' });
   }
 
-  put(url: string | Request, options: RequestInit = {}) {
+  put(url: string | Request, options: Params = {}) {
     return this.fetch(url, { ...options, method: 'PUT' });
   }
 
-  patch(url: string | Request, options: RequestInit = {}) {
+  patch(url: string | Request, options: Params = {}) {
     return this.fetch(url, { ...options, method: 'PATCH' });
   }
 
-  delete(url: string | Request, options: RequestInit = {}) {
+  delete(url: string | Request, options: Params = {}) {
     return this.fetch(url, { ...options, method: 'DELETE' });
   }
 
-  head(url: string | Request, options: RequestInit = {}) {
+  head(url: string | Request, options: Params = {}) {
     return this.fetch(url, { ...options, method: 'HEAD' });
   }
 
-  options(url: string | Request, options: RequestInit = {}) {
+  options(url: string | Request, options: Params = {}) {
     return this.fetch(url, { ...options, method: 'OPTIONS' });
   }
 }
