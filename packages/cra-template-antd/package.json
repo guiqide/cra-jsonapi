@@ -6,7 +6,7 @@
     "react",
     "antd"
   ],
-  "author": "kevingui <kevingui@tencent.com>",
+  "author": "guiqide <guiqide@gmail.com>",
   "homepage": "https://git.woa.com/msh-low-code/cra-template/tree/master/packages/cra-template-antd#readme",
   "license": "MIT",
   "files": [
@@ -22,5 +22,5 @@
     "@typescript-eslint/parser": "^4.32.0",
     "eslint-config-airbnb-typescript": "^14.0.0"
   },
-  "gitHead": "6d378826e4555183c46a4e0058aa9373e2d1e736"
+  "gitHead": "5c0cbca32992e6de24c7087b5c867b7096f06fa9"
 }
