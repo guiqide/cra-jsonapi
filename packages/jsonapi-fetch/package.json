@@ -34,5 +34,6 @@
   },
   "dependencies": {
     "eslint-config-airbnb-typescript": "^14.0.0"
-  }
+  },
+  "gitHead": "6d378826e4555183c46a4e0058aa9373e2d1e736"
 }
