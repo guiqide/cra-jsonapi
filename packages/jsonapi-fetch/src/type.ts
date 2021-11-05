@@ -1,6 +1,7 @@
 export interface Params extends RequestInit {
   preFetchCallback?: Function;
   finishFetchCallback?: Function;
+  errorFetchCacllback?: Function;
 }
 
 export interface JsonError {

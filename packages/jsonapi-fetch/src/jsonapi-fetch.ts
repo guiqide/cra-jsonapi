@@ -17,24 +17,39 @@ class JsonapiFetch {
     return JsonapiFetch.instance;
   }
 
+  async checkStatus(res: any) {
+    const parsed = await res.json();
+
+    const { status } = res;
+
+    if (status >= 200 && status < 300) {
+      return parsed;
+    }
+
+    return Promise.reject(new Error(parsed));
+  }
+
   fetch(resource: string | Request, options: Params) {
     const opt = { ...this.default, ...options };
+    console.log(opt);
 
-    if (options.preFetchCallback) {
-      options.preFetchCallback();
+    if (opt.preFetchCallback) {
+      opt.preFetchCallback();
     }
-    return fetch(resource, opt).then((response) => {
-      if (options.finishFetchCallback) {
-        options.finishFetchCallback();
-      }
-      if (response.status >= 200 && response.status < 300) {
-        return response.json();
-      }
-
-      return response.json().then((err) => {
+    return fetch(resource, opt)
+      .then(this.checkStatus)
+      .then((resp) => {
+        if (opt.finishFetchCallback) {
+          opt.finishFetchCallback();
+        }
+        return resp;
+      })
+      .catch((err) => {
+        if (opt.errorFetchCacllback) {
+          opt.errorFetchCacllback(err);
+        }
         throw err;
       });
-    });
   }
 
   get(url: string | Request, options: Params = {}) {

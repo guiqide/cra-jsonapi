@@ -1,9 +1,9 @@
 {
-  "name": "jsonapi-fetch",
+  "name": "cra-jsonapi",
   "version": "0.1.3",
   "description": "json api fetch",
   "author": "guiqide <guiqide@gmail.com>",
-  "homepage": "https://git.woa.com/msh-low-code/cra-template/tree/master/packages/jsonapi-fetch#readme",
+  "homepage": "git@github.com:guiqide/cra-jsonapi.git#readme",
   "license": "MIT",
   "main": "lib/jsonapi-fetch.js",
   "directories": {
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@git.woa.com:msh-low-code/cra-template.git"
+    "url": "git@github.com:guiqide/cra-jsonapi.git"
   },
   "scripts": {
     "start": "tsc --watch",
@@ -35,5 +35,5 @@
   "dependencies": {
     "eslint-config-airbnb-typescript": "^14.0.0"
   },
-  "gitHead": "5c0cbca32992e6de24c7087b5c867b7096f06fa9"
+  "gitHead": "8206ea87fef3d4baa99566be72a32fbf2461530a"
 }

@@ -4,6 +4,7 @@ declare class JsonapiFetch {
     default: Params;
     constructor(config: Params);
     static getInstance(config: Params): JsonapiFetch;
+    checkStatus(res: any): Promise<any>;
     fetch(resource: string | Request, options: Params): Promise<any>;
     get(url: string | Request, options?: Params): Promise<any>;
     post(url: string | Request, options?: Params): Promise<any>;

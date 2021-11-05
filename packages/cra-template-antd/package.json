@@ -22,5 +22,5 @@
     "@typescript-eslint/parser": "^4.32.0",
     "eslint-config-airbnb-typescript": "^14.0.0"
   },
-  "gitHead": "5c0cbca32992e6de24c7087b5c867b7096f06fa9"
+  "gitHead": "8206ea87fef3d4baa99566be72a32fbf2461530a"
 }
